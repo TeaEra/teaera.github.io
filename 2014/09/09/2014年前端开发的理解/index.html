@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="TeaEra" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="写在前面：  本文从QQ邮箱发件箱中“考古”所得，写于“2014年9月9日(星期二) 晚上11:37”，当时从香港到北京一个多月，还在找工作的过程中，2周后9月24日入职了“搜狗”。   前端开发的理解 注：作为前端开发爱好者，鉴于实际经验不足，以下为一些理解和期望  先从成熟的网站例子开始： 我知道的国外众筹网站除了这个 quirky 之外，还有 indiegogo 和 kickstarter">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2014年前端开发的理解">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2014&#x2F;09&#x2F;09&#x2F;2014%E5%B9%B4%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E7%90%86%E8%A7%A3&#x2F;index.html">
+<meta property="og:site_name" content="TeaEra">
+<meta property="og:description" content="写在前面：  本文从QQ邮箱发件箱中“考古”所得，写于“2014年9月9日(星期二) 晚上11:37”，当时从香港到北京一个多月，还在找工作的过程中，2周后9月24日入职了“搜狗”。   前端开发的理解 注：作为前端开发爱好者，鉴于实际经验不足，以下为一些理解和期望  先从成熟的网站例子开始： 我知道的国外众筹网站除了这个 quirky 之外，还有 indiegogo 和 kickstarter">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-10T08:19:57.660Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2014/09/09/2014%E5%B9%B4%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E7%90%86%E8%A7%A3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>2014年前端开发的理解 | TeaEra</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TeaEra</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/09/09/2014%E5%B9%B4%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E7%90%86%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="TeaEra">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TeaEra">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2014年前端开发的理解
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-09-09 00:00:00" itemprop="dateCreated datePublished" datetime="2014-09-09T00:00:00+08:00">2014-09-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-10 16:19:57" itemprop="dateModified" datetime="2019-11-10T16:19:57+08:00">2019-11-10</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>写在前面：<br>  本文从QQ邮箱发件箱中“考古”所得，写于“2014年9月9日(星期二) 晚上11:37”，当时从香港到北京一个多月，还在找工作的过程中，2周后9月24日入职了“搜狗”。</p>
+</blockquote>
+<hr>
+<p>前端开发的理解</p>
+<p>注：作为前端开发爱好者，鉴于实际经验不足，以下为一些理解和期望</p>
+<ol>
+<li><p>先从成熟的网站例子开始：</p>
+<p>我知道的国外众筹网站除了这个 <a href="http://www.quirky.com/shop" target="_blank" rel="noopener">quirky</a> 之外，还有 <a href="https://www.indiegogo.com/" target="_blank" rel="noopener">indiegogo</a> 和 <a href="https://www.kickstarter.com/" target="_blank" rel="noopener">kickstarter</a>；</p>
+<p>国内的众筹网站我之前比较关注的则有 <a href="http://www.jue.so/" target="_blank" rel="noopener">觉so</a> ；</p>
+<p>单从首页上看，太火鸟、Quirky、觉so像是一类的，而Indiegogo、kickstarter和创客星球是另一类，前者的特点是导航功能特别具体和详细，有点像网上商店的感觉，而后者则更侧重于提出和分享点子，从简单明确的导航栏就可以看出来；纯从前端开发者角度出发，后者的设计简单明了，并且更容易吸引用户；详细的分类，可以学习Indiegogo这样，在点击了explore之后再列出来；</p>
+<p>在使用了Firefox做了简单测试之后，发现除了觉so，其他网站都支持响应式设计，所以对于响应式设计的支持，是前端开发必须首要处理的问题，我之前有尝试过使用bootstrap作为css的库进行布局和设计，效果不错，我看了创客的源码，也使用了bootstrap，这样可以节省开发成本，bootstrap开源而且基于bootstrap的开源css库非常多，比如创客还用了font-awesome，就是css字体库，这个我们之后再提；</p>
+</li>
+<li><p>网站托管的考虑</p>
+<p>我的认识有限，我先讲讲自己的理解，首先我觉得一定要一个可以自己能“配置”的服务器（这种类型的应该就是所谓的VPS吧？）；</p>
+<p>我之前使用过国外的iPage，结果不支持ssh访问，只能打包上传；</p>
+<p>还用过google app engine、sina app engine，（百度也开发了BAE）这样的Paas服务确实很方便（不需要担心各种包的安装），但是服务器不可配置，也就是人家安装了什么包，你就必须使用什么包，比如SAE只支持到Django 1.4；</p>
+<p>从这个角度上看，amazon的aws就很好，纯粹就是一个主机，可以自己ssh访问，进行配置什么的，阿里的服务是仿Amazon的，所以我觉得应该差不多，优点就是可控性强，缺点就是贵、而且需要学习成本（如何配置、控制）；</p>
+<p>我还知道的一个就是 <a href="https://cloud.digitalocean.com/login" target="_blank" rel="noopener">DigitalOcean</a> ，这个没有真的使用过，不过应该也是一个VPS提供商，优点就是SSD硬盘；</p>
+</li>
+<li><p>图</p>
+<p>之前提到美工，因为HTML和CSS越来越程序化，比如HTML摒弃了以前的table布局和div布局，开始走语义化的路子，直观理解就是从标签的使用上就可以看出整体结构；CSS方面，有了sass和compass的出现（我觉得必将是趋势，我非常建议直接上手开始使用！），也变得更像编程；所以美工的工作变得越来越局限，显得可有可无，我的理解，程序员现在做不到而美工能做到的就是制图，就是凭空去制作一张配色、比例、图案都非常好的图片，除此之外，美工的工作意义不大；<br>使用CSS实现字体，也是响应式设计的一个重要部分，比如之前提到的font awesome（应该有很多这种 css font包），这样就避免了以前设计网页，需要美工去制作各种固定大小的图标的困扰；</p>
+</li>
+<li><p>对于前端开发者的要求</p>
+<p>因为我自己就是没有实际经验的，我就列一些我觉得重要和要学习的内容：</p>
+<ul>
+<li>HTML基本标签</li>
+<li>XHTML的规范</li>
+<li>javascript的使用</li>
+<li>jQuery使用：这个是潮流，挡不住；</li>
+<li>sass和compass使用非常棒！这个很多企业都作为可选项，我认为应该是将来的必选项！</li>
+<li>借助bootstrap</li>
+<li>高级目标：脱离或者基于bootstrap建立自己的css库</li>
+</ul>
+</li>
+</ol>
+<p>p.s. 我实际开发太欠缺，这段时间生病脑子还木，很多认识太浅太泛，我觉得很多问题得结合实际去考虑，如果还有什么点没有讨论到，可以继续讨论；</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
+          </div>
+
+        
+
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="TeaEra"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">TeaEra</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/teaera" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;teaera" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TeaEra</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
